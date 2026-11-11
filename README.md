@@ -28,6 +28,23 @@ running `python main.py` on the checked-in datasets.
 
 ---
 
+## Feedback from Assignment 13 → incorporated here
+
+> *"As you move into machine learning modeling in future assignments, focus on
+> integrating these preprocessing transformations into unified pipeline objects."*
+
+That guidance is implemented in this assignment:
+
+- **Task 7** wraps imputation + scaling (numerical) and imputation + one-hot
+  encoding (categorical) into two `sklearn.pipeline.Pipeline` objects combined
+  by a single `ColumnTransformer` — one object transforms raw data with NaNs.
+- **Task 8** goes further: the `ColumnTransformer` and the model are joined into
+  one full `Pipeline`, so the flow is literally
+  `raw data → encoding → scaling → LogisticRegression` through a single
+  `fit()` / `predict()` interface with no manual steps in between.
+
+---
+
 ## Quick start
 
 ```bash
